@@ -33,7 +33,10 @@ namespace QuickMaster
 
             //コンテキストクラスを登録
             services.AddDbContext<MyContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("MyContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("MyContext")));
+            services.AddDbContext<MyContext2>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MyContext2")));
+
 
             services.AddControllersWithViews()
                 .AddNewtonsoftJson();
